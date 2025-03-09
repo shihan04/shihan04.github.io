@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Canvas</title>
+        <style type="text/css">
+            canvas {
+                border: 1px solid black;
+            }
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas></canvas>
+        <br><br>
+
+        <h3>Change image size</h3>
+        <form id="resize">
+            Pixel per unit: <input type="number" name="pixel" value="20">
+        </form>
+        <button onclick="resize()">Change</button>
+        <br><br>
+        
+        <h3>Add member from</h3>
+        <form id="inp1">
+            Point: <input type="number" name="point">
+            x-dst: <input type="number" name="px">
+            y-dst: <input type="number" name="py">
+        </form>
+        <button onclick="inp1()">Add</button>
+        <br><br>
+
+        <h3>Add member between</h3>
+        <form id="inp2">
+            Point-1: <input type="number" name="point1">
+            Point-2: <input type="number" name="point2">
+        </form>
+        <button onclick="inp2()">Add</button>
+        <br><br>
+
+        <h3>Add/edit external force</h3>
+        <form id="inp3">
+            Point: <input type="number" name="point">
+            Horizontal: <input type="number" name="fx" value="0">
+            Vertical: <input type="number" name="fy" value="0">
+        </form>
+        <button onclick="inp3()">Add/edit</button>
+        <br><br>
+
+        <h3>Add fixed support</h3>
+        <form id="inp4">
+            Point: <input type="number" name="point">
+        </form>
+        <button onclick="inp4()">Add</button>
+        <br><br>
+
+        <h3>Add moving support</h3>
+        <form id="inp5">
+            Point: <input type="number" name="point">
+        </form>
+        <button onclick="inp5()">Add</button>
+        <br><br>
+
+        <h3>Compute result</h3>
+        <button onclick="compute()">Compute</button>
+        <br><br>
+
+        <h3>Results</h3>
+        <p id="res"></p>
+        <br><br>
+
+        <script src="canvas.js"></script>
+    </body>
+</html>
