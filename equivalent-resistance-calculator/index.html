@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Equivalent Resistance Calculator</title>
+        <style type="text/css">
+            canvas {
+                border: 1px solid black;
+            }
+            body {
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <br>
+        
+        <h3>Insert/edit resistance</h3>
+        <form id="inp1">
+            Value: <input type="number" step="any" name="R" value="0">
+            Node 1: <input type="number" name="U">
+            Node 2: <input type="number" name="V">
+        </form>
+        <button onclick="insert_res()">Insert</button>
+        <br>
+
+        <h3>Compute Equivalent Resistance Between</h3>
+        <form id="inp2">
+            Node 1: <input type="number" name="U">
+            Node 2: <input type="number" name="V">
+        </form>
+        <button onclick="result()">Compute</button>
+        <br>
+
+        <h3>Result</h3>
+        <p id="res"></p>
+        <br><br>
+
+        <script src="canvas.js"></script>
+    </body>
+</html>
