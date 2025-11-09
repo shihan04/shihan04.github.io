@@ -206,6 +206,9 @@ function compute(u,v) {
         else if(seriesCombine(u,v)){
             continue;
         }
+        else if(removeNull(u,v)){
+            continue;
+        }
         else if(wyeDelta(u,v)){
             continue;
         }
@@ -335,6 +338,33 @@ function wyeDelta(u,v){
             node[i][y]=-1;
             node[z][i]=-1;
             node[i][z]=-1;
+            return 1;
+        }
+    }
+    return 0;
+}
+
+function removeNull(u,v){
+    for(var i=1;i<=N;i++){
+        var c=0,x=-1;
+        for(var j=1;j<=N;j++){
+            if(j!=i && node[i][j]==0 && j!=u && j!=v){
+                c=1;
+                x=j;
+                break;
+            }
+        }
+        if(c==1){
+            for(var j=1;j<=N;j++){
+                if(j==i || j==x || node[x][j]==-1){
+                    continue;
+                }
+                paraComb(i,j,node[x][j]);
+                node[j][x]=-1;
+                node[x][j]=-1;
+            }
+            node[i][x]=-1;
+            node[x][i]=-1;
             return 1;
         }
     }
